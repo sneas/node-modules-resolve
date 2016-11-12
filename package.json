@@ -30,6 +30,7 @@
       "path": "node_modules/cz-conventional-changelog"
     }
   },
+  "homepage": "https://github.com/sneas/node-modules-resolve",
   "dependencies": {
     "callsite": "1.0.0"
   },
