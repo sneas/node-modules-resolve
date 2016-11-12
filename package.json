@@ -27,7 +27,7 @@
       "pre-commit": "npm run test"
     },
     "commitizen": {
-      "path": "cz-conventional-changelog"
+      "path": "node_modules/cz-conventional-changelog"
     }
   },
   "dependencies": {
