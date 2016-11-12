@@ -1,16 +1,19 @@
-var expect = require('chai').expect;
-var nmResolve = require('./index.js');
+var expect = require('chai').expect,
+    path = require('path'),
+    nmResolve = require('./index.js');
 
 describe('node-modules-resolve', function() {
     it('should resolve existing path', function() {
-        expect(nmResolve('chai')).to.not.equal(undefined);
+        expect(nmResolve('chai')).to.have.string(path.sep);
     });
 
     it('should resolve existing path', function() {
-        expect(nmResolve('chai/../chai')).to.not.equal(undefined);
+        expect(nmResolve('chai/../chai')).to.have.string(path.sep);
     });
 
-    it('should not resolve unexisting path', function() {
-        expect(nmResolve('chai/unexisting')).to.equal(undefined);
+    it('should throw exception on unexisting path', function() {
+        expect(function() {
+            nmResolve('chai/unexisting');
+        }).to.throw(Error);
     });
 });
